@@ -1,0 +1,18 @@
+gearman:
+  build: .
+  ports:
+    - "4730:4730"
+  links:
+    - mysql
+  environment:
+    MYSQL_USER: gearman
+    MYSQL_PASSWORD: fizzbuzz
+    MYSQL_HOST: mysql
+    MYSQL_DB: gearman
+mysql:
+  image: mysql
+  environment:
+    MYSQL_USER: gearman
+    MYSQL_PASSWORD: fizzbuzz
+    MYSQL_ROOT_PASSWORD: fizzbuzz
+    MYSQL_DATABASE: gearman
