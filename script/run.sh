@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+function finish {
+  kill -9 `pidof gearmand`
+}
+
+trap finish SIGTERM SIGKILL
+
+
 DEFAULT_PORT=4730
 
 PARAMS="--backlog=32 \
