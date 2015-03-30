@@ -16,6 +16,7 @@ PARAMS="--backlog=32 \
   --threads=4 \
   --worker-wakeup=0 \
   --log-file=none \
+  --file-descriptors=65536 \
   --port=${GEARMAN_PORT:-$DEFAULT_PORT} \
   "
 
