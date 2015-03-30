@@ -13,4 +13,3 @@ USER gearman
 COPY ./script /opt/gearman/script
 
 CMD ["/opt/gearman/script/run.sh"]
-
