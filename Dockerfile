@@ -8,8 +8,7 @@ RUN apt-get update \
 RUN mkdir -p /opt/gearman && chown gearman /opt/gearman
 
 WORKDIR /opt/gearman
-USER gearman
-
 COPY ./script /opt/gearman/script
 
 CMD ["/opt/gearman/script/run.sh"]
+
