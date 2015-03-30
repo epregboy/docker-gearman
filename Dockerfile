@@ -1,14 +1,14 @@
 FROM ubuntu:trusty
 MAINTAINER Aaron Mills <aaron.mills@returnpath.com>
 
-ENV GEARMAN_VERSION 1.1.12
+ENV GEARMAN_VERSION 1.0.6
 
 RUN apt-get update \
     && apt-get -y install wget vim gearman-tools libmysqld-dev mysql-client \
     libmemcached-dev build-essential libboost-all-dev gperf libevent-dev uuid-dev \
     && apt-get clean
 
-RUN wget -P /tmp/ https://launchpad.net/gearmand/1.2/$GEARMAN_VERSION/+download/gearmand-$GEARMAN_VERSION.tar.gz
+RUN wget -P /tmp/ https://launchpad.net/gearmand/1.0/$GEARMAN_VERSION/+download/gearmand-$GEARMAN_VERSION.tar.gz
 
 RUN cd /tmp && \
     tar xzf gearmand-$GEARMAN_VERSION.tar.gz && \
